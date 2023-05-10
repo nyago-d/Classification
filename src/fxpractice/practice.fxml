@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.URL ?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+ 
+ 
+<GridPane  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="fxpractice.PracticeController" hgap="10" vgap="10" styleClass="root" alignment="BASELINE_CENTER">
+    
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+    <Label fx:id="title" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 16pt"/>
+    
+    <Canvas fx:id="canvas" width="400" height="400" GridPane.columnIndex="0" GridPane.rowIndex="2" onMouseClicked="#handleCanvasClick" />
+    
+    <fx:define>
+        <ToggleGroup fx:id="toggle" />
+    </fx:define>
+    
+    <HBox fx:id="button_area" spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        
+        <RadioButton fx:id="radio1" text="青" toggleGroup="$toggle" userData="1" selected="true" />
+        <RadioButton fx:id="radio2" text="赤" toggleGroup="$toggle" userData="-1" />
+        <Button text="学習" prefWidth="80" onAction="#handleLearnButton" />
+        <Button text="クリア" prefWidth="80" onAction="#handleClearButton" />
+    </HBox>
+    
+</GridPane>
+ 
